@@ -1,12 +1,12 @@
 import React from 'react';
 import { signIn, signOut, useSession } from 'next-auth/react';
 
-const Home: React.FC = () => {
+const SignIn: React.FC = () => {
   const { data: session, status } = useSession();
   const loading = status === 'loading';
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       {loading && <p>Loading...</p>}
       {!loading && !session && (
         <>
@@ -24,4 +24,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default SignIn;
